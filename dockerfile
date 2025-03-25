@@ -1,12 +1,13 @@
-FROM python:3-alpine
+# Use the official Nginx image as a base
+FROM nginx:latest
 
-WORKDIR /app
+WORKDIR /usr/share/nginx/html
 
-COPY requirements.txt .
+COPY . /usr/share/nginx/html
+     
+EXPOSE 80
 
-RUN pip install -r requirements.txt
+CMD ["nginx", "-g", "daemon off;"]
 
-COPY . .
 
-CMD ["python", "app.py"]
 
