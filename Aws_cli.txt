@@ -2,4 +2,4 @@ sudo yum install awscli
 
 aws configure
 
-
+aws s3 ls
